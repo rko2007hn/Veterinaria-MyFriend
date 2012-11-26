@@ -18,7 +18,7 @@ public interface ProductoService {
     public ProductoCollection productos() throws DAOExcepcion;
 	
 	@GET
-    @Path("/productos")
+    @Path("/productos/{filaInicial}/{cantFilas}")
     @Produces({"application/xml", "application/json"})
     public ProductoCollection productosXRangoFilas(
     		@PathParam("filaInicial") Integer filaInicial, 
