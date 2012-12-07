@@ -14,19 +14,22 @@ public interface ProductoService {
     
 	@GET
     @Path("/productos")
-    @Produces({"application/xml", "application/json"})
+    //@Produces({"application/xml", "application/json"})
+    @Produces({"application/json"})
     public ProductoCollection productos() throws DAOExcepcion;
 	
 	@GET
-    @Path("/productos")
-    @Produces({"application/xml", "application/json"})
+    @Path("/productos/{filaInicial}/{cantFilas}")
+    //@Produces({"application/xml", "application/json"})
+    @Produces({"application/json"})
     public ProductoCollection productosXRangoFilas(
     		@PathParam("filaInicial") Integer filaInicial, 
     		@PathParam("cantFilas") Integer cantFilas) throws DAOExcepcion;
 	
     @GET
     @Path("/productosXNombre/{nombre}")
-    @Produces({"application/xml", "application/json"})
+    //@Produces({"application/xml", "application/json"})
+    @Produces({"application/json"})
     public ProductoCollection productosXNombre(@PathParam("nombre") String nombre) throws DAOExcepcion;
     
 }
